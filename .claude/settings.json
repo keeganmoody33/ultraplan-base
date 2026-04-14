@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f package.json ] && npm install || true"
+          },
+          {
+            "type": "command",
+            "command": "[ -f requirements.txt ] && pip install -r requirements.txt || true"
+          }
+        ]
+      }
+    ]
+  }
+}
